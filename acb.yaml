@@ -1,0 +1,7 @@
+version: v1.1.0
+
+steps:
+ - build: -f Dockerfile -t $Registry/test/demo:1.0 .
+   env: ["DOCKER_BUILDKIT=1"]
+ - push: 
+     - $Registry/test/demo:1.0
