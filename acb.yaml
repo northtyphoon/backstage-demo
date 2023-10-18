@@ -1,7 +1,7 @@
 version: v1.1.0
 
 steps:
- - build: -f Dockerfile -t $Registry/test/demo:1.0 .
+ - build: -f Dockerfile -t $Registry/{{.Values.image}} .
    env: ["DOCKER_BUILDKIT=1"]
  - push: 
-     - $Registry/test/demo:1.0
+     - $Registry/{{.Values.image}}
